@@ -1,0 +1,10 @@
+version: '2'
+services:
+    axb1:
+        image: axb1
+        build: .
+        volumes:
+            - "I:/axb/srop_seccomp/dockerfile/bin/flag:/home/ctf/flag"
+        ports:
+            - "10001:9998"
+        container_name: axb1

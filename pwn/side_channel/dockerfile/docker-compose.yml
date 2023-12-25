@@ -1,0 +1,10 @@
+version: '2'
+services:
+    axb2:
+        image: axb2
+        build: .
+        volumes:
+            - "I:/axb/side-channel/dockerfile/bin/flag:/home/ctf/flag"
+        ports:
+            - "10003:9997"
+        container_name: axb2
