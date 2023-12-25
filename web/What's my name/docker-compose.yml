@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  web:
+    build: .
+    ports:
+      - "9999:80"
+    volumes:
+      - ./www:/var/www/html
+      - ./apache2/mutex:/var/lock/apache2
+    environment:
+      - ICTF=D0g3{test}

@@ -1,0 +1,6 @@
+version: '2'
+services:
+  service:
+    build: .
+    ports:
+        - "22401:5000"

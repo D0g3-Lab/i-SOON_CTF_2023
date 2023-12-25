@@ -1,0 +1,14 @@
+# 使用官方 PHP 7.3.4 镜像作为基础镜像
+FROM php:7.3.4-apache
+
+COPY run.sh /home/1.sh
+
+COPY ./www /var/www/html/
+
+WORKDIR /var/www/html
+
+RUN chmod -R 777 /var/www/html
+RUN chmod -R 777 /home/1.sh
+
+CMD ["/home/1.sh"]
+EXPOSE 80

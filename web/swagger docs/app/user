@@ -1,0 +1,124 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "username": "user1",
+            "birthdate": "1990-01-01",
+            "id_number": "1234567890"
+        },
+        {
+            "id": 2,
+            "username": "user2",
+            "birthdate": "1995-05-05",
+            "id_number": "0987654321"
+        },
+        {
+            "id": 3,
+            "username": "user3",
+            "birthdate": "1988-12-10",
+            "id_number": "9876543210"
+        },
+        {
+            "id": 4,
+            "username": "user4",
+            "birthdate": "1992-07-15",
+            "id_number": "0123456789"
+        },
+        {
+            "id": 5,
+            "username": "user5",
+            "birthdate": "1985-03-20",
+            "id_number": "5432109876"
+        },
+        {
+            "id": 6,
+            "username": "user6",
+            "birthdate": "1998-09-25",
+            "id_number": "9876543210"
+        },
+        {
+            "id": 7,
+            "username": "user7",
+            "birthdate": "1993-06-30",
+            "id_number": "4567890123"
+        },
+        {
+            "id": 8,
+            "username": "user8",
+            "birthdate": "1991-02-05",
+            "id_number": "7890123456"
+        },
+        {
+            "id": 9,
+            "username": "user9",
+            "birthdate": "1987-11-25",
+            "id_number": "3210987654"
+        },
+        {
+            "id": 10,
+            "username": "user10",
+            "birthdate": "1996-08-12",
+            "id_number": "6543210987"
+        },
+        {
+            "id": 11,
+            "username": "user11",
+            "birthdate": "1989-04-15",
+            "id_number": "2109876543"
+        },
+        {
+            "id": 12,
+            "username": "user12",
+            "birthdate": "1994-01-20",
+            "id_number": "7654321098"
+        },
+        {
+            "id": 13,
+            "username": "user13",
+            "birthdate": "1986-10-05",
+            "id_number": "2345678901"
+        },
+        {
+            "id": 14,
+            "username": "user14",
+            "birthdate": "1999-05-10",
+            "id_number": "8765432109"
+        },
+        {
+            "id": 15,
+            "username": "user15",
+            "birthdate": "1997-02-15",
+            "id_number": "5432109876"
+        },
+        {
+            "id": 16,
+            "username": "user16",
+            "birthdate": "1992-09-20",
+            "id_number": "1098765432"
+        },
+        {
+            "id": 17,
+            "username": "user17",
+            "birthdate": "1984-06-25",
+            "id_number": "4321098765"
+        },
+        {
+            "id": 18,
+            "username": "user18",
+            "birthdate": "1993-03-30",
+            "id_number": "7654321098"
+        },
+        {
+            "id": 19,
+            "username": "user19",
+            "birthdate": "1987-12-05",
+            "id_number": "2109876543"
+        },
+        {
+            "id": 20,
+            "username": "user20",
+            "birthdate": "1990-09-10",
+            "id_number": "9876543210"
+        }
+    ]
+}

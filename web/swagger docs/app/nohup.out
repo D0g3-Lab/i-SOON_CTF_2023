@@ -1,0 +1,6 @@
+ * Serving Flask app 'api'
+ * Debug mode: off
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:8899
+Press CTRL+C to quit
+127.0.0.1 - - [11/Nov/2023 22:18:11] "GET / HTTP/1.1" 404 -
