@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>File Converter</title>
+    <style>
+        .move-up {
+  	    position: relative;
+  	    top: -80px; /* 向上移动50像素 */
+	}
+        #previewArea {
+            position: fixed;
+            bottom: 0;
+            text-align: left;
+        }
+        #previewContent {
+            color: white; /* 设置文本颜色为粉色 */
+	    background-color: rgba(0, 128, 255, 0.3);
+	    font-family: Arial, sans-serif;
+	    font-size: 18px;
+        }
+        #previewArea h2 {
+            color: pink; /* 设置 "Preview:" 文字的颜色为粉色 */
+        }
+        #downloadButton {
+	    position: relative;
+	    top: -50px;
+  	    left: -465px; /* 向左移动50像素 */
+            font-size: 20px; /* 设置链接文本的大小 */
+            color: white;   /* 设置链接文本的颜色为白色 */
+        }
+        body {
+            font-family: 'STKaiti', sans-serif;
+            background-image: url('test.jpg');
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            cursor: url('cursor.png'),auto;
+        }
+        h1 {
+            text-align: left; /* 将标题文本左对齐 */
+            color: pink;
+            margin-right: 50px;
+            position: relative; /* 添加这一行 */
+            top: -150px; /* 负值表示向上移动，根据需要调整 */
+        }
+        form {
+            background-color: rgba(173, 216, 230, 0.5);
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            text-align: left;
+            position: relative; /* 添加这一行 */
+            top: -150px; /* 负值表示向上移动，根据需要调整 */
+        }
+        label {
+            display: block;
+            margin: 10px 0;
+            color: lightpink; /* 深灰色 */
+            font-weight: bold;
+        }
+        input[type="file"], select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid white;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        input[type="button"] {
+            background-color: pink;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        input[type="button"]:hover {
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+<!-- 网页鼠标点击特效（爱心） -->
+<script type="text/javascript">
+    ! function (e, t, a) {
+        function r() {
+            for (var e = 0; e < s.length; e++) s[e].alpha <= 0 ? (t.body.removeChild(s[e].el), s.splice(e, 1)) : (s[
+                e].y--, s[e].scale += .004, s[e].alpha -= .013, s[e].el.style.cssText = "left:" + s[e].x +
+                "px;top:" + s[e].y + "px;opacity:" + s[e].alpha + ";transform:scale(" + s[e].scale + "," + s[e]
+                    .scale + ") rotate(45deg);background:" + s[e].color + ";z-index:99999");
+            requestAnimationFrame(r)
+        }
+
+        function n() {
+            var t = "function" == typeof e.onclick && e.onclick;
+            e.onclick = function (e) {
+                t && t(), o(e)
+            }
+        }
+
+        function o(e) {
+            var a = t.createElement("div");
+            a.className = "heart", s.push({
+                el: a,
+                x: e.clientX - 5,
+                y: e.clientY - 5,
+                scale: 1,
+                alpha: 1,
+                color: c()
+            }), t.body.appendChild(a)
+        }
+
+        function i(e) {
+            var a = t.createElement("style");
+            a.type = "text/css";
+            try {
+                a.appendChild(t.createTextNode(e))
+            } catch (t) {
+                a.styleSheet.cssText = e
+            }
+            t.getElementsByTagName("head")[0].appendChild(a)
+        }
+
+        function c() {
+            return "rgb(" + ~~(255 * Math.random()) + "," + ~~(255 * Math.random()) + "," + ~~(255 * Math
+                .random()) + ")"
+        }
+        var s = [];
+        e.requestAnimationFrame = e.requestAnimationFrame || e.webkitRequestAnimationFrame || e
+            .mozRequestAnimationFrame || e.oRequestAnimationFrame || e.msRequestAnimationFrame || function (e) {
+            setTimeout(e, 1e3 / 60)
+        }, i(
+            ".heart{width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.heart:after,.heart:before{content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: fixed;}.heart:after{top: -5px;}.heart:before{left: -5px;}"
+        ), n(), r()
+    }(window, document);
+</script>
+<!-- 以上为鼠标特效-->
+<h1>File Converter</h1>
+<form action="/convert" method="post" enctype="multipart/form-data" id="convertForm">
+    <label for="configFile">Select a file to convert:</label>
+    <input type="file" name="configFile" id="configFile" accept=".ini, .xml, .properties, .yaml, .yml">
+    <br>
+    <label for="format">Select the format to convert to:</label>
+    <select name="format" id="format">
+        <option value="ini">ini</option>
+        <option value="xml">XML</option>
+        <option value="properties">Properties</option>
+        <option value="yaml">yaml</option>
+    </select>
+    <br>
+    <input type="button" value="Convert" id="convertButton">
+</form>
+<div id="previewArea" style="display: none;">
+    <h2 class="move-up">Preview:</h2>
+    <textarea id="previewContent" class="move-up" rows="10" cols="50"></textarea>
+    <a href="/download" id="downloadButton" download="output.yaml">Download</a>
+</div>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const convertButton = document.getElementById("convertButton");
+        const previewArea = document.getElementById("previewArea");
+        const previewContent = document.getElementById("previewContent");
+        const convertForm = document.getElementById("convertForm"); // 通过ID获取表单元素
+
+        convertButton.addEventListener("click", function() {
+            const formData = new FormData(convertForm); // 使用获取的表单元素
+            fetch("/convert", {
+                method: "POST",
+                body: formData
+            })
+                .then(response => response.text())
+                .then(data => {
+                    previewContent.innerHTML = data;
+                    previewArea.style.display = "block";
+                })
+                .catch(error => {
+                    console.error("Conversion error:", error);
+                });
+        });
+    });
+</script>
+</body>
+</html>

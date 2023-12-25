@@ -1,0 +1,11 @@
+version: '3.7'
+services:
+# Node.js应用程序服务
+  app:
+    build: .
+    container_name: node-app-container
+    environment:
+      - ICTF=flag{123456}
+      - PORT=3000
+    ports:
+      - "3000:3000"
