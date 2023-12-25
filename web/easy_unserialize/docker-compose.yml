@@ -1,0 +1,9 @@
+version: '3.7'
+services:
+  service:
+    build: .
+    image: easy_unserialize
+    ports:
+      - "8098:80"
+    environment:
+      - ICTF=D0g3{easy_unserialize_test}

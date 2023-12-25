@@ -1,0 +1,9 @@
+version: '3.7'
+services:
+  app:
+    build: .
+    container_name: ezjava
+    ports:
+      - "8080:80"
+    cap_add:
+      - NET_ADMIN
